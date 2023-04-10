@@ -1,0 +1,55 @@
+
+
+
+
+import { Dropdown, Menu } from "antd";
+import Coordinate from "./Coordinate";
+import { useMapEvents} from 'react-leaflet';
+
+var lat = 0;
+var lng = 0;
+
+
+
+
+function RightClick(){
+
+     
+
+    const menu = <Menu 
+    items={[{
+        label:lat,
+        key:"tambahplot",
+
+    }]}>
+    </Menu>
+
+
+
+    return(
+        
+        <div className="RightClick">
+            <Dropdown overlay={menu} trigger={["contextMenu"]}>
+         
+            <div
+            
+                style={{
+                    width :"100",
+                    height:"100vh",
+                    backgroundColor: "lightgray",
+                    border: "1px dashed red"
+                }}>
+                    
+                    <h1>{console.log("long =" +lng)}</h1>
+
+            </div>
+
+           
+
+            </Dropdown>
+        </div>
+
+    );
+}
+
+export default RightClick;
